@@ -1,0 +1,100 @@
+<!DOCTYPE html> <!-- Declares that this is an HTML5 document -->
+<html lang="en"> <!-- Root element with English language specification -->
+
+<head>
+    <!-- Meta tags for character encoding and responsive viewport -->
+    <meta charset="UTF-8"> <!-- Specifies character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the website responsive -->
+    <link rel="shortcut icon" type="image/x-icon" href="src/assets/img-browser-logo.png" />
+    <link rel="stylesheet" href="style.css"> <!-- Links to external CSS file -->
+    <title>Pizza Planet</title> <!-- Page title shown in browser tab -->
+</head>
+
+<body>
+    <!-- Top Bar Section: Contains contact information and social media links -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <!-- Contact Information Section -->
+            <div class="contact-info">
+                <!-- Phone number link with icon -->
+                <a href="tel:+1234567890">
+                    <i class="fas fa-phone"></i> <!-- Font Awesome phone icon -->
+                    <span>+1 234 567 890</span>
+                </a>
+                <!-- Email link with icon -->
+                <a href="mailto:info@example.com">
+                    <i class="fas fa-envelope"></i> <!-- Font Awesome email icon -->
+                    <span>info@example.com</span>
+                </a>
+            </div>
+            <!-- Social Media Links Section -->
+            <div class="social-links">
+                <!-- Social media icons using Font Awesome -->
+                <a href="https://www.facebook.com" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar Section -->
+    <nav>
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="home.html" class="logo">
+                <img src="src/assets/img-logo.png" alt="Brand Logo" />
+            </a>
+            <!-- Hamburger Menu for Mobile -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="product.html">Product</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <!-- Special button for Acsenda -->
+                <li><button class="nav-link-button" onclick="navigateToAcsenda()"><span>Acsenda</span></button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section: Main banner area -->
+    <section class="hero">
+        <div class="hero-content">
+            <!-- Main heading -->
+            <h1 class="hero-title">Welcome to Pizza Planet</h1>
+            <!-- Subtitle -->
+            <p class="hero-subtitle">Savor the best slices, made with love and fresh ingredients</p>
+            <!-- Call-to-action button -->
+            <a href="product.html" class="cta-button">Order Your Pizza Now</a>
+        </div>
+    </section>
+
+    <!-- Link to external JavaScript file -->
+    <script src="main.js"></script>
+
+
+    <!--This section is for explanation------------------------------
+    -----------------------------------------------------------------
+    This HTML code creates a website with three main sections:
+
+    A top bar containing contact information and social media links.
+    A navigation bar with logo, menu items, and a special button.
+    A hero section with a welcome message and call-to-action button.
+
+    The code uses:
+
+    Font Awesome icons for social media and contact information.
+    Responsive design elements (viewport meta tag and hamburger menu).
+    External CSS (style.css) and JavaScript (main.js) files.
+    Clean organization with proper indentation and sectioning.
+    ------------------------------------------------------------------
+    ----------------------------------------------------------------->
+</body>
+
+</html>

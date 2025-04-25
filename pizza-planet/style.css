@@ -1,0 +1,1596 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Reset default margins and paddings, 
+   set box-sizing for consistent behavior, 
+   and apply Poppins font as default */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+/* ====== Top Bar ====== */
+.top-bar {
+    background: #344b61;
+    /* Dark blue background */
+    padding: 0.5rem 2rem;
+    /* Vertical and horizontal padding */
+    font-size: 0.9rem;
+    /* Slightly smaller font size */
+    font-weight: 600;
+    /* Bold text */
+    position: fixed;
+    /* Stays at the top of the page */
+    width: 100%;
+    /* Spans the entire width */
+    top: 0;
+    /* Position at the top */
+    z-index: 1000;
+    /* Ensures it stays above other elements */
+}
+
+.top-bar-container {
+    max-width: 1200px;
+    /* Restrict width for better readability */
+    margin: 0 auto;
+    /* Center horizontally */
+    display: flex;
+    /* Arrange children in a row */
+    justify-content: space-between;
+    /* Space out children evenly */
+    align-items: center;
+    /* Vertically align items */
+}
+
+/* Contact Info Styles */
+.contact-info {
+    display: flex;
+    /* Arrange items in a row */
+    gap: 1.5rem;
+    /* Spacing between links */
+}
+
+.contact-info a {
+    color: #FFFFFF;
+    /* White text */
+    text-decoration: none;
+    /* Remove underline */
+    display: flex;
+    /* Align icon and text inline */
+    align-items: center;
+    /* Center items vertically */
+    gap: 0.5rem;
+    /* Space between icon and text */
+    transition: color 0.3s ease;
+    /* Smooth color change on hover */
+}
+
+.contact-info a:hover {
+    color: #FF6F61;
+    /* Change text to coral on hover */
+}
+
+/* Social Media Links Styles */
+.social-links {
+    display: flex;
+    /* Arrange items in a row */
+    gap: 1rem;
+    /* Space between links */
+}
+
+.social-links a {
+    color: #FFFFFF;
+    /* White text */
+    text-decoration: none;
+    /* Remove underline */
+    transition: all 0.3s ease;
+    /* Smooth color and position change */
+}
+
+.social-links a:hover {
+    color: #FF6F61;
+    /* Coral color on hover */
+    transform: translateY(-2px);
+    /* Slight upward movement */
+}
+
+/* ====== Navigation ====== */
+nav {
+    background: #2C3E50;
+    /* Dark gray background */
+    padding: 1rem 2rem;
+    /* Spacing around content */
+    position: fixed;
+    /* Fixed at the top */
+    width: 100%;
+    /* Full-width */
+    top: 32px;
+    /* Below top bar */
+    z-index: 999;
+    /* Higher priority than most elements */
+    transition: all 0.3s ease;
+    /* Smooth background transition */
+}
+
+nav.scrolled {
+    background: rgba(44, 62, 80, 0.95);
+    /* Slightly transparent background when scrolling */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Add shadow for depth */
+}
+
+.nav-container {
+    max-width: 1200px;
+    /* Restrict container width */
+    margin: 0 auto;
+    /* Center content */
+    display: flex;
+    /* Align items in a row */
+    justify-content: space-between;
+    /* Space between left and right sections */
+    align-items: center;
+    /* Center items vertically */
+}
+
+.logo img {
+    height: 40px;
+    /* Control image height */
+    width: auto;
+    /* Maintain aspect ratio */
+    transition: filter 0.3s ease, transform 0.3s ease;
+    /* Smooth hover effects */
+}
+
+.logo:hover img {
+    transform: scale(1.05);
+    /* Slight zoom on hover */
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    /* Arrange links in a row */
+    gap: 2rem;
+    /* Space between links */
+    list-style: none;
+    /* Remove bullet points */
+    align-items: center;
+    /* Center links vertically */
+}
+
+.nav-links li {
+    display: flex;
+    /* Inline-flex to center items */
+    align-items: center;
+    /* Vertical alignment */
+    margin-right: 1rem;
+    /* Space to the right */
+}
+
+.nav-links a {
+    color: #FFFFFF;
+    /* White text */
+    text-decoration: none;
+    /* Remove underline */
+    position: relative;
+    /* For hover underline animation */
+    padding: 0.5rem 0;
+    /* Add vertical padding */
+    font-size: 1rem;
+    /* Standard font size */
+    font-weight: 600;
+    /* Semi-bold text */
+    transition: color 0.3s ease;
+    /* Smooth color change */
+    display: inline-block;
+    /* Ensure underline spans text width */
+    line-height: 1.5;
+    /* Match line height to buttons */
+}
+
+.nav-links a::after {
+    content: '';
+    /* Empty content for the underline */
+    position: absolute;
+    /* Relative to parent */
+    bottom: 0;
+    /* Position at the bottom */
+    left: 0;
+    /* Start at the left */
+    width: 0;
+    /* Start hidden */
+    height: 2px;
+    /* Thin underline */
+    background: #FF6F61;
+    /* Coral color */
+    transition: width 0.3s ease;
+    /* Smooth width expansion */
+}
+
+.nav-links a:hover {
+    color: #FF6F61;
+    /* Change text color on hover */
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    /* Expand underline */
+}
+
+/* Buttons for Navigation */
+.nav-link-button {
+    display: inline-flex;
+    /* Align text and icon inline */
+    align-items: center;
+    /* Center items vertically */
+    justify-content: center;
+    /* Center items horizontally */
+    border-radius: 4px;
+    /* Rounded corners */
+    background-color: #FF6F61;
+    /* Coral background */
+    border: none;
+    /* Remove border */
+    color: #FFFFFF;
+    /* White text */
+    text-align: center;
+    /* Center text */
+    font-size: 1rem;
+    /* Standard size */
+    font-weight: 600;
+    /* Bold text */
+    padding: 0.5rem 1rem;
+    /* Spacing inside the button */
+    transition: all 0.5s;
+    /* Smooth hover effects */
+    cursor: pointer;
+    /* Pointer cursor for interactivity */
+    margin: 0;
+    /* No margin */
+    height: 2.5rem;
+    /* Fixed button height */
+    line-height: 1.5;
+    /* Align with links */
+}
+
+.nav-link-button span {
+    cursor: pointer;
+    /* Pointer cursor for hover */
+    display: inline-block;
+    /* Inline for movement */
+    position: relative;
+    /* For arrow animation */
+    transition: 0.5s;
+    /* Smooth animations */
+    padding: 0;
+    /* Reset padding */
+}
+
+.nav-link-button span:after {
+    content: '»';
+    /* Arrow symbol */
+    position: absolute;
+    /* Positioned relative to span */
+    opacity: 0;
+    /* Initially hidden */
+    top: 0;
+    /* Same vertical alignment */
+    right: -15px;
+    /* Slightly outside the button */
+    transition: 0.5s;
+    /* Smooth appearance */
+}
+
+.nav-link-button:hover span {
+    padding-right: 15px;
+    /* Add padding on hover */
+}
+
+.nav-link-button:hover span:after {
+    opacity: 1;
+    /* Show arrow */
+    right: 0;
+    /* Move arrow into view */
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+/* ===== Hero Section Styles ===== */
+
+/* Main Hero Section */
+.hero {
+    height: 100vh;
+    /* Full viewport height for a fullscreen effect */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('src/assets/home-img.jpg');
+    /* Dark overlay with a background image */
+    background-size: cover;
+    /* Ensure the image covers the entire background */
+    background-position: center;
+    /* Center the image for better composition */
+    display: flex;
+    /* Use flexbox for centering content */
+    align-items: center;
+    /* Vertically center content */
+    justify-content: center;
+    /* Horizontally center content */
+    text-align: center;
+    /* Center-align text */
+    color: white;
+    /* White text for contrast */
+    padding-top: 107px;
+    /* Adjust for the height of the top bar and navigation */
+}
+
+/* Hero Content */
+.hero-content {
+    max-width: 800px;
+    /* Restrict content width for readability */
+    padding: 2rem;
+    /* Add padding for spacing */
+    opacity: 0;
+    /* Initial state: invisible */
+    transform: translateY(20px);
+    /* Initial state: slightly below position */
+    animation: fadeInUp 1s ease forwards;
+    /* Animate fading in and moving up */
+}
+
+/* Hero Title */
+.hero-title {
+    font-size: 3.5rem;
+    /* Large font for emphasis */
+    margin-bottom: 1rem;
+    /* Add spacing below the title */
+    font-weight: bold;
+    /* Bold text for prominence */
+}
+
+/* Hero Subtitle */
+.hero-subtitle {
+    font-size: 1.5rem;
+    /* Smaller font for subtitle */
+    margin-bottom: 2rem;
+    /* Add spacing below the subtitle */
+    color: rgba(255, 255, 255, 0.9);
+    /* Slightly transparent white for subtlety */
+}
+
+/* Call-to-Action Button */
+.cta-button {
+    display: inline-block;
+    /* Inline-block for a button-like appearance */
+    padding: 1rem 2rem;
+    /* Add padding for a larger clickable area */
+    background: #FF6F61;
+    /* Primary color for the button background */
+    color: white;
+    /* White text for contrast */
+    text-decoration: none;
+    /* Remove underline for the link */
+    border-radius: 5px;
+    /* Rounded corners for a modern look */
+    font-size: 1.1rem;
+    /* Slightly larger text size */
+    transition: all 0.3s ease;
+    /* Smooth transition for hover effects */
+    border: 2px solid #FF6F61;
+    /* Add a border matching the background */
+}
+
+/* Call-to-Action Button Hover Effects */
+.cta-button:hover {
+    background: transparent;
+    /* Transparent background for inverted effect */
+    border-color: #FF6F61;
+    /* Keep the border color consistent */
+    color: #FF6F61;
+    /* Change text color to match the border */
+    transform: translateY(-3px);
+    /* Slight upward movement for interactivity */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* Add a shadow for depth */
+}
+
+/* Animation: Fade In and Move Up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        /* Start fully transparent */
+        transform: translateY(20px);
+        /* Start slightly below the final position */
+    }
+
+    to {
+        opacity: 1;
+        /* End fully visible */
+        transform: translateY(0);
+        /* End at the original position */
+    }
+}
+
+/* ===== About Section Styles ===== */
+
+/* Main About Section */
+.about-section {
+    padding: 100px 0;
+    /* Vertical padding for spacing */
+    background-color: #f8f9fa;
+    /* Light background for contrast */
+}
+
+/* Container for Content */
+.section-container {
+    max-width: 1200px;
+    /* Limit content width for readability */
+    margin: 0 auto;
+    /* Center the container */
+    padding: 0 20px;
+    /* Add horizontal padding for smaller screens */
+}
+
+/* ===== Section Header Styles ===== */
+
+/* Header Wrapper */
+.section-header {
+    text-align: center;
+    /* Center-align text */
+    margin-bottom: 60px;
+    /* Add spacing below the header */
+}
+
+/* Header Title */
+.section-header h2 {
+    font-size: 2.5rem;
+    /* Large font size for prominence */
+    color: #E63946;
+    /* Tomato red color for emphasis */
+    margin-bottom: 20px;
+    /* Space below the title */
+}
+
+/* Header Subtitle */
+.section-header p {
+    color: #666;
+    /* Neutral gray for the subtitle */
+    font-size: 1.1rem;
+    /* Medium font size for readability */
+    max-width: 700px;
+    /* Restrict width for a neat appearance */
+    margin: 0 auto;
+    /* Center-align the paragraph */
+    line-height: 1.6;
+    /* Add line spacing for readability */
+}
+
+/* ===== Our Story Section ===== */
+
+/* Story Wrapper */
+.our-story {
+    display: flex;
+    /* Use flexbox for layout */
+    gap: 40px;
+    /* Space between the image and content */
+    margin-bottom: 80px;
+    /* Add spacing below the section */
+    align-items: center;
+    /* Align content vertically */
+}
+
+/* Story Image Container */
+.story-image {
+    flex: 1;
+    /* Take equal space with the content */
+    border-radius: 10px;
+    /* Rounded corners for the image */
+    overflow: hidden;
+    /* Hide overflowing parts of the image */
+}
+
+/* Story Image */
+.story-image img {
+    width: 100%;
+    /* Make image responsive */
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    /* Remove inline gaps */
+}
+
+/* Story Content */
+.story-content {
+    flex: 1;
+    /* Take equal space with the image */
+}
+
+/* Story Title */
+.story-content h3 {
+    font-size: 1.8rem;
+    /* Medium font size for section titles */
+    color: #D32F2F;
+    /* Deep red for emphasis */
+    margin-bottom: 20px;
+    /* Add spacing below the title */
+}
+
+/* Story Paragraph */
+.story-content p {
+    color: #666;
+    /* Neutral gray for the text */
+    line-height: 1.6;
+    /* Add line spacing for readability */
+    margin-bottom: 20px;
+    /* Add spacing below paragraphs */
+}
+
+/* ===== Team Section ===== */
+
+/* Team Container */
+.team-container {
+    display: grid;
+    /* Use grid for layout */
+    grid-template-columns: repeat(4, 1fr);
+    /* 3 equal columns */
+    gap: 30px;
+    /* Space between team members */
+}
+
+/* Individual Team Member Card */
+.team-member {
+    text-align: center;
+    /* Center-align content */
+    background: white;
+    /* White background for cards */
+    border-radius: 10px;
+    /* Rounded corners */
+    overflow: hidden;
+    /* Clip content inside the card */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    transition: transform 0.3s ease;
+    /* Smooth hover effect */
+}
+
+/* Team Member Hover Effect */
+.team-member:hover {
+    transform: translateY(-5px);
+    /* Slight upward motion on hover */
+}
+
+/* Member Image Wrapper */
+.member-image {
+    width: 100%;
+    /* Full width of the card */
+    height: 300px;
+    /* Fixed height for images */
+    overflow: hidden;
+    /* Clip overflow content */
+}
+
+/* Member Image */
+.member-image img {
+    width: 100%;
+    /* Stretch image to fill width */
+    height: 100%;
+    /* Stretch image to fill height */
+    object-fit: cover;
+    /* Maintain aspect ratio and crop excess */
+}
+
+/* Member Information */
+.member-info {
+    padding: 20px;
+    /* Add spacing inside the card */
+}
+
+/* Member Name */
+.member-info h4 {
+    color: #FF6F61;
+    /* Highlighted color for names */
+    font-size: 1.2rem;
+    /* Medium font size */
+    margin-bottom: 5px;
+    /* Add spacing below the name */
+}
+
+/* Member Role or Description */
+.member-info p {
+    color: #666;
+    /* Neutral gray for text */
+    font-size: 1rem;
+    /* Standard font size */
+    margin-bottom: 15px;
+    /* Add spacing below the description */
+}
+
+/* Social Links for Team Members */
+.social-links-member {
+    display: flex;
+    /* Use flexbox for layout */
+    justify-content: center;
+    /* Center-align links */
+    gap: 15px;
+    /* Space between links */
+}
+
+/* Social Link Icons */
+.social-links-member a {
+    color: #FF6F61;
+    /* Initial color for icons */
+    text-decoration: none;
+    /* Remove underline */
+    font-size: 1.2rem;
+    /* Medium size for icons */
+    transition: color 0.3s ease;
+    /* Smooth hover effect */
+}
+
+/* Social Link Hover Effect */
+.social-links-member a:hover {
+    color: #D32F2F;
+    /* Change color to deep red on hover */
+}
+
+
+/* ===== Contact Section Styles ===== */
+
+/* Contact Container */
+.contact-container {
+    max-width: 1200px;
+    /* Limit the container's width */
+    margin: 2rem auto;
+    /* Center the container with margin */
+    padding: 2rem 1rem;
+    /* Add padding inside the container */
+}
+
+/* Contact Header */
+.contact-header {
+    margin-top: 30px;
+    /* Add space above the header */
+    text-align: center;
+    /* Center-align text */
+    margin-bottom: 3rem;
+    /* Add space below the header */
+}
+
+/* Contact Header Title */
+.contact-header h1 {
+    font-size: 2.5rem;
+    /* Large font for the title */
+    color: #E63946;
+    /* Vibrant red for emphasis */
+    margin-bottom: 1rem;
+    /* Add spacing below the title */
+}
+
+/* Contact Header Description */
+.contact-header p {
+    color: #FFFFFF;
+    /* White text for contrast */
+    font-size: 1.1rem;
+    /* Slightly larger font for the paragraph */
+}
+
+/* Contact Info Container (Grid Layout) */
+.contact-info-container {
+    display: grid;
+    /* Use grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Auto-fit columns with min/max width */
+    gap: 2rem;
+    /* Space between grid items */
+    margin-bottom: 3rem;
+    /* Add space below the info container */
+}
+
+/* Info Box Style */
+.info-box {
+    background: #2C3E50;
+    /* Dark background for contrast */
+    padding: 2rem;
+    /* Padding inside the box */
+    border-radius: 10px;
+    /* Rounded corners */
+    text-align: center;
+    /* Center-align content */
+    transition: transform 0.3s ease;
+    /* Smooth hover effect */
+}
+
+/* Info Box Hover Effect */
+.info-box:hover {
+    transform: translateY(-5px);
+    /* Slightly lift the box on hover */
+}
+
+/* Icon Style in Info Box */
+.info-box i {
+    font-size: 2rem;
+    /* Large icon for prominence */
+    color: #FF6F61;
+    /* Use red color for icons */
+    margin-bottom: 1rem;
+    /* Space below the icon */
+}
+
+/* Info Box Header */
+.info-box h3 {
+    margin-bottom: 0.5rem;
+    /* Space below the header */
+    color: #FFFFFF;
+    /* White text for contrast */
+}
+
+/* Info Box Text */
+.info-box p {
+    color: #FFFFFF;
+    /* White text for better readability */
+}
+
+/* Contact Content Grid */
+.contact-content {
+    display: grid;
+    /* Use grid for contact form layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Auto-fit columns with min/max width */
+    gap: 2rem;
+    /* Space between grid items */
+}
+
+/* Contact Form Style */
+.contact-form {
+    background: #fff;
+    /* White background for the form */
+    padding: 2rem;
+    /* Padding inside the form */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+/* Form Group (Label and Input) */
+.form-group {
+    margin-bottom: 1rem;
+    /* Add spacing between form groups */
+}
+
+/* Form Group Label */
+.form-group label {
+    display: block;
+    /* Display the label as a block element */
+    margin-bottom: 0.5rem;
+    /* Space below the label */
+    font-weight: 600;
+    /* Bold label text */
+    color: #333;
+    /* Dark gray for readability */
+}
+
+/* Input and Textarea Styles */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    /* Full width of the form */
+    padding: 0.8rem;
+    /* Padding for better touch targets */
+    border: 1px solid #ddd;
+    /* Light border color */
+    border-radius: 5px;
+    /* Rounded corners for inputs */
+    font-size: 1rem;
+    /* Standard font size */
+    transition: border-color 0.3s ease;
+    /* Smooth transition for border on focus */
+}
+
+/* Input Focus Effect */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    /* Remove default outline */
+    border-color: #007bff;
+    /* Blue border on focus */
+}
+
+/* Error Message Style */
+.error-message {
+    color: #dc3545;
+    /* Red text for errors */
+    font-size: 0.875rem;
+    /* Smaller font for error messages */
+    margin-top: 0.25rem;
+    /* Space above error message */
+    display: none;
+    /* Initially hidden */
+}
+
+/* Submit Button Style */
+.submit-btn {
+    background: #FF6F61;
+    /* Red background for the button */
+    color: white;
+    /* White text color */
+    padding: 1rem 2rem;
+    /* Padding inside the button */
+    border: none;
+    /* Remove border */
+    border-radius: 5px;
+    /* Rounded corners for the button */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    font-size: 1rem;
+    /* Standard font size */
+    transition: background 0.3s ease;
+    /* Smooth background color transition */
+}
+
+/* Submit Button Hover Effect */
+.submit-btn:hover {
+    background: #D32F2F;
+    /* Darker red background on hover */
+}
+
+/* Map Container */
+.map-container {
+    width: 100%;
+    /* Full width */
+    max-height: 600px;
+    /* Max height for the map */
+    padding-top: 56.25%;
+    /* Maintain a 16:9 aspect ratio */
+    position: relative;
+    /* For absolute positioning of the iframe */
+    border-radius: 10px;
+    /* Rounded corners for the container */
+    overflow: hidden;
+    /* Clip content inside the container */
+}
+
+/* Map Iframe Style */
+.map-container iframe {
+    position: absolute;
+    /* Position iframe absolutely within the container */
+    top: 0;
+    /* Align to the top */
+    left: 0;
+    /* Align to the left */
+    width: 100%;
+    /* Full width of the container */
+    height: 100%;
+    /* Full height of the container */
+    border: 0;
+    /* Remove default border */
+    border-radius: 10px;
+    /* Rounded corners for iframe */
+}
+
+/* Success Message Style */
+.success-message {
+    display: none;
+    /* Initially hidden */
+    background: #d4edda;
+    /* Light green background for success */
+    color: #155724;
+    /* Dark green text for success */
+    padding: 1rem;
+    /* Padding inside the message */
+    border-radius: 5px;
+    /* Rounded corners */
+    margin-bottom: 1rem;
+    /* Space below the success message */
+    text-align: center;
+    /* Center the success message */
+}
+
+/* ===== Product Section Styles ===== */
+
+/* Product Container */
+.product-container {
+    max-width: 1200px;
+    /* Limit the width of the container */
+    margin: 2rem auto;
+    /* Center the container with auto margins */
+    padding: 0 1rem;
+    /* Add padding inside the container */
+}
+
+/* Product Section Title */
+.product-section-title {
+    text-align: center;
+    /* Center-align the section title */
+    margin-top: 100px;
+    /* Add margin at the top */
+    margin-bottom: 2rem;
+    /* Add space below the title */
+    color: #E63946;
+    /* Vibrant red color */
+    font-size: 2.5rem;
+    /* Large font size for the title */
+}
+
+/* Product Grid Layout */
+.products-grid {
+    display: grid;
+    /* Use grid for product layout */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Auto-fit columns with min/max width */
+    gap: 2rem;
+    /* Space between grid items */
+}
+
+/* Product Card Style */
+.product-card {
+    border: 1px solid #e2e8f0;
+    /* Light border around the card */
+    border-radius: 8px;
+    /* Rounded corners */
+    overflow: hidden;
+    /* Hide overflowed content */
+    transition: transform 0.2s, box-shadow 0.2s;
+    /* Smooth transition on hover */
+    background: white;
+    /* White background for the card */
+    animation: myAnimProduct 2s ease 0s 1 normal forwards;
+    /* Animation for product appearance */
+}
+
+/* Product Card Hover Effect */
+.product-card:hover {
+    transform: translateY(-4px);
+    /* Lift the card on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    /* Add shadow on hover */
+}
+
+/* Product Card Animation */
+@keyframes myAnimProduct {
+    0% {
+        opacity: 0;
+        /* Initially invisible */
+        transform: translateY(50px);
+        /* Start from below */
+    }
+
+    100% {
+        opacity: 1;
+        /* Fully visible */
+        transform: translateY(0);
+        /* Set to normal position */
+    }
+}
+
+/* Product Image */
+.product-image {
+    width: 100%;
+    /* Make the image take full width */
+    height: 200px;
+    /* Fixed height for the image */
+    object-fit: cover;
+    /* Ensure the image covers the area without distortion */
+}
+
+/* Product Information Section */
+.product-info {
+    padding: 1.5rem;
+    /* Add padding inside the info section */
+}
+
+/* Product Title */
+.product-title {
+    font-size: 1.25rem;
+    /* Slightly larger font for the title */
+    font-weight: 600;
+    /* Bold font for emphasis */
+    margin-bottom: 0.5rem;
+    /* Space below the title */
+    color: #1a202c;
+    /* Dark gray color for the title */
+}
+
+/* Product Description */
+.product-description {
+    color: #4a5568;
+    /* Light gray color for description */
+    margin-bottom: 1rem;
+    /* Space below the description */
+    font-size: 0.9rem;
+    /* Slightly smaller font */
+    line-height: 1.5;
+    /* Line height for readability */
+}
+
+/* Product Price */
+.product-price {
+    font-size: 1.5rem;
+    /* Large font for the price */
+    font-weight: 700;
+    /* Bold weight for the price */
+    color: #2d3748;
+    /* Dark color for the price */
+    margin-bottom: 1rem;
+    /* Space below the price */
+}
+
+/* Add to Cart Button */
+.cart-button {
+    width: 100%;
+    /* Full width button */
+    padding: 0.75rem;
+    /* Padding inside the button */
+    background-color: #FF6F61;
+    /* Red background */
+    color: white;
+    /* White text */
+    border: none;
+    /* No border */
+    border-radius: 6px;
+    /* Rounded corners */
+    font-weight: 600;
+    /* Bold text */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 0.2s;
+    /* Smooth background color transition */
+}
+
+/* Add to Cart Button Hover Effect */
+.cart-button:hover {
+    background-color: #D32F2F;
+    /* Darker red on hover */
+}
+
+/* Cart Count Indicator */
+.cart-count-container {
+    position: fixed;
+    /* Fixed position at the bottom */
+    bottom: 1rem;
+    /* Distance from the bottom */
+    right: 1rem;
+    /* Distance from the right */
+    z-index: 999;
+    /* Ensure it stays on top */
+}
+
+/* Cart Count Style */
+.cart-count {
+    background-color: #e53e3e;
+    /* Red background */
+    color: white;
+    /* White text */
+    padding: 0.75rem 1.5rem;
+    /* Padding inside the count box */
+    border-radius: 9999px;
+    /* Circle shape */
+    font-weight: bold;
+    /* Bold text */
+    cursor: pointer;
+    /* Pointer cursor */
+    transition: all 0.2s;
+    /* Smooth transition */
+    border: none;
+    /* No border */
+    font-size: 1rem;
+    /* Standard font size */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+}
+
+/* Cart Count Hover Effect */
+.cart-count:hover {
+    transform: scale(1.05);
+    /* Slightly enlarge the count indicator */
+    background-color: #c53030;
+    /* Darker red on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* More prominent shadow */
+}
+
+/* Cart Sidebar */
+.cart-sidebar {
+    position: fixed;
+    /* Fixed on the right side */
+    top: 0;
+    /* Align to the top */
+    right: -400px;
+    /* Initially hidden off-screen */
+    width: 400px;
+    /* Width of the sidebar */
+    height: 100vh;
+    /* Full height of the viewport */
+    background-color: white;
+    /* White background */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    transition: right 0.3s ease-in-out;
+    /* Smooth transition when opening */
+    z-index: 1000;
+    /* Ensure it stays on top */
+    overflow-y: auto;
+    /* Allow scrolling inside the sidebar */
+    padding: 2rem;
+    /* Padding inside the sidebar */
+}
+
+/* Cart Sidebar Open State */
+.cart-sidebar.open {
+    right: 0;
+    /* Show the sidebar when it's open */
+}
+
+/* Cart Header */
+.cart-header {
+    display: flex;
+    /* Use flexbox for layout */
+    justify-content: space-between;
+    /* Space items apart */
+    align-items: center;
+    /* Center-align items vertically */
+    margin-bottom: 2rem;
+    /* Space below the header */
+}
+
+/* Cart Title */
+.cart-title {
+    font-size: 1.5rem;
+    /* Large font for the title */
+    font-weight: bold;
+    /* Bold font for emphasis */
+}
+
+/* Close Cart Button */
+.close-cart {
+    background: none;
+    /* No background */
+    border: none;
+    /* No border */
+    font-size: 1.5rem;
+    /* Large font for close button */
+    cursor: pointer;
+    /* Pointer cursor */
+    color: #4a5568;
+    /* Gray color */
+    padding: 0.5rem;
+    /* Padding for the button */
+    transition: color 0.2s;
+    /* Smooth color transition */
+}
+
+/* Close Cart Hover Effect */
+.close-cart:hover {
+    color: #2d3748;
+    /* Darker gray on hover */
+}
+
+/* Cart Items Container */
+.cart-items {
+    display: flex;
+    /* Flex layout for items */
+    flex-direction: column;
+    /* Stack items vertically */
+    gap: 1rem;
+    /* Space between items */
+}
+
+/* Cart Item */
+.cart-item {
+    display: flex;
+    /* Flexbox for item layout */
+    gap: 1rem;
+    /* Space between image and text */
+    padding: 1rem;
+    /* Padding inside the item */
+    border: 1px solid #e2e8f0;
+    /* Border around the item */
+    border-radius: 8px;
+    /* Rounded corners */
+    align-items: center;
+    /* Vertically center items */
+}
+
+/* Cart Item Image */
+.cart-item-image {
+    width: 80px;
+    /* Fixed width for the image */
+    height: 80px;
+    /* Fixed height for the image */
+    object-fit: cover;
+    /* Ensure the image covers the area without distortion */
+    border-radius: 4px;
+    /* Rounded corners for the image */
+}
+
+/* Cart Item Details */
+.cart-item-details {
+    flex: 1;
+    /* Let the details take available space */
+}
+
+/* Cart Item Title */
+.cart-item-title {
+    font-weight: 600;
+    /* Bold title */
+    margin-bottom: 0.25rem;
+    /* Space below the title */
+}
+
+/* Cart Item Price */
+.cart-item-price {
+    color: #2d3748;
+    /* Dark color for price */
+    font-weight: 600;
+    /* Bold price */
+}
+
+/* Cart Item Remove Button */
+.cart-item-remove {
+    background-color: #e53e3e;
+    /* Red background for remove button */
+    color: white;
+    /* White text */
+    border: none;
+    /* No border */
+    padding: 0.5rem;
+    /* Padding inside the button */
+    border-radius: 4px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor */
+    font-size: 0.875rem;
+    /* Smaller font */
+    transition: background-color 0.2s;
+    /* Smooth background color transition */
+}
+
+/* Cart Item Remove Button Hover Effect */
+.cart-item-remove:hover {
+    background-color: #c53030;
+    /* Darker red on hover */
+}
+
+/* Cart Total */
+.cart-total {
+    margin-top: 2rem;
+    /* Add margin at the top */
+    padding-top: 1rem;
+    /* Padding at the top */
+    border-top: 2px solid #e2e8f0;
+    /* Border on top */
+    display: flex;
+    /* Flex layout for total */
+    justify-content: space-between;
+    /* Space items apart */
+    font-weight: bold;
+    /* Bold font */
+    font-size: 1.25rem;
+    /* Larger font size */
+}
+
+/* Checkout Button */
+.checkout-button {
+    width: 100%;
+    /* Full width button */
+    padding: 1rem;
+    /* Padding inside the button */
+    background-color: #48bb78;
+    /* Green background */
+    color: white;
+    /* White text */
+    border: none;
+    /* No border */
+    border-radius: 6px;
+    /* Rounded corners */
+    font-weight: 600;
+    /* Bold text */
+    cursor: pointer;
+    /* Pointer cursor */
+    margin-top: 1rem;
+    /* Space above the button */
+    transition: background-color 0.2s;
+    /* Smooth background color transition */
+}
+
+/* Checkout Button Hover Effect */
+.checkout-button:hover {
+    background-color: #38a169;
+    /* Darker green on hover */
+}
+
+/* Empty Cart Message */
+.empty-cart-message {
+    text-align: center;
+    /* Center-align the text */
+    padding: 2rem;
+    /* Padding inside the message */
+    color: #666;
+    /* Gray color for the message */
+    font-size: 1.1rem;
+    /* Slightly larger font */
+}
+
+/* ===== Footer Styles ===== */
+
+/* Footer Container */
+.footer {
+    background-color: #2C3E50;
+    /* Dark background color */
+    color: #FFFFFF;
+    /* White text color */
+    padding: 40px 0;
+    /* Vertical padding inside the footer */
+    width: 100%;
+    /* Full width */
+}
+
+/* Footer Content Layout */
+.footer-content {
+    width: 100%;
+    /* Full width */
+    display: grid;
+    /* Use grid layout for sections */
+    grid-template-columns: repeat(3, 1fr);
+    /* Three equal-width columns */
+    gap: 40px;
+    /* Space between columns */
+    padding: 0 40px;
+    /* Padding inside the content */
+}
+
+/* Footer Section Title */
+.footer-section h3 {
+    font-size: 18px;
+    /* Title font size */
+    margin-bottom: 20px;
+    /* Space below the title */
+    color: #FF6F61;
+    /* Vibrant red color for titles */
+}
+
+/* Footer Section Paragraphs */
+.footer-section p {
+    line-height: 1.6;
+    /* Line height for readability */
+    margin-bottom: 10px;
+    /* Space below paragraphs */
+    color: #FFFFFF;
+    /* White text color for paragraphs */
+}
+
+/* Footer Section Lists */
+.footer-section ul {
+    list-style: none;
+    /* Remove bullet points */
+    padding: 0;
+    /* Remove padding */
+}
+
+/* Footer Section List Items */
+.footer-section ul li {
+    margin-bottom: 10px;
+    /* Space between list items */
+}
+
+/* Footer Section Links */
+.footer-section ul li a {
+    color: #FFFFFF;
+    /* White text color for links */
+    text-decoration: none;
+    /* Remove underline from links */
+    transition: color 0.3s ease;
+    /* Smooth color transition on hover */
+}
+
+/* Footer Section Link Hover Effect */
+.footer-section ul li a:hover {
+    color: #FF6F61;
+    /* Red color when hovering over links */
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    text-align: center;
+    /* Center-align the text */
+    padding-top: 20px;
+    /* Padding above the bottom section */
+    border-top: 1px solid #555;
+    /* Subtle border above the bottom section */
+    margin-top: 40px;
+    /* Margin above the footer bottom */
+    padding-left: 40px;
+    /* Left padding */
+    padding-right: 40px;
+    /* Right padding */
+}
+
+/* Social Media Links in Footer */
+.footer-social-links a {
+    color: #FF6F61;
+    /* Red color for social media links */
+    text-decoration: none;
+    /* Remove underline */
+    margin: 0 10px;
+    /* Space between social media icons */
+}
+
+
+/* ===== Mobile Styles ===== */
+
+/* For screens up to 992px (large tablets and small desktops) */
+@media (max-width: 992px) {
+    .our-story {
+        flex-direction: column;
+        /* Stack content vertically for better readability */
+    }
+
+    .team-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* Show 2 team members per row */
+    }
+}
+
+/* For screens up to 768px (tablets) */
+@media (max-width: 768px) {
+    .top-bar {
+        padding: 0.5rem 1rem;
+        /* Reduce padding for a more compact look */
+    }
+
+    .contact-info,
+    .social-links {
+        gap: 1rem;
+        /* Reduce the gap for better spacing on smaller screens */
+    }
+
+    .contact-info span {
+        display: none;
+        /* Hide additional text to save space */
+    }
+
+    .hamburger {
+        display: flex;
+        /* Display hamburger menu for mobile navigation */
+    }
+
+    .nav-links {
+        position: fixed;
+        /* Make the nav fixed for mobile */
+        top: 102px;
+        /* Adjust to account for the top bar and navigation */
+        right: -100%;
+        /* Initially hidden off-screen */
+        flex-direction: column;
+        /* Stack links vertically */
+        background: #2c3e50;
+        /* Mobile-specific background color */
+        width: 100%;
+        /* Full width for mobile */
+        text-align: center;
+        /* Center-align links */
+        padding: 2rem 0;
+        /* Add vertical padding */
+        gap: 2rem;
+        /* Space out navigation links */
+        transition: right 0.3s ease;
+        /* Smooth slide-in effect */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        /* Add shadow for depth */
+    }
+
+    .nav-links.active {
+        right: 0;
+        /* Slide-in the nav when active */
+    }
+
+    .nav-link-button {
+        width: 100%;
+        /* Buttons take full width on mobile */
+        padding: 12px;
+        /* Increase padding for easier tapping */
+        font-size: 16px;
+        /* Adjust font size for mobile readability */
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+        /* Rotate first line for "X" effect */
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+        /* Hide middle line for "X" effect */
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+        /* Rotate last line for "X" effect */
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        /* Adjust hero title size for tablets */
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+        /* Adjust hero subtitle size for tablets */
+    }
+
+    .contact-container {
+        margin: 1rem auto;
+        /* Add margin for spacing on smaller screens */
+    }
+
+    .contact-header h1 {
+        font-size: 2rem;
+        /* Smaller contact header for tablets */
+    }
+
+    .info-box {
+        padding: 1.5rem;
+        /* Reduce padding for better fit */
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns for footer content */
+    }
+}
+
+/* For screens up to 640px (large phones) */
+@media (max-width: 640px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+        /* Display products in a single column */
+    }
+
+    .cart-sidebar {
+        width: 100%;
+        /* Make the sidebar full-width for better fit */
+        right: -100%;
+        /* Initially hidden off-screen */
+    }
+
+    .cart-count {
+        padding: 0.5rem 1rem;
+        /* Adjust padding for smaller size */
+        font-size: 0.9rem;
+        /* Smaller text for better fit */
+    }
+}
+
+/* For screens up to 576px (small phones) */
+@media (max-width: 576px) {
+    .team-container {
+        grid-template-columns: 1fr;
+        /* Stack team members in a single column */
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+        /* Reduce section header size */
+    }
+}
+
+/* For screens up to 480px (extra small phones) */
+@media (max-width: 480px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        /* Stack footer content in a single column */
+    }
+}

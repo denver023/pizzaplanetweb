@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic meta tags for character encoding and responsive viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- External stylesheets: Font Awesome for icons and custom styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="src/assets/img-browser-logo.png" />
+    <link rel="stylesheet" href="style.css">
+    <title>Product</title>
+    <!-- Mobile-specific styles -->
+    <style>
+        @media (max-width: 768px) {
+            .nav-links {
+                top: 78px; /* Adjusts navigation position on mobile devices */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar - Same as About page -->
+    <nav style="top: 0;">
+        <div class="nav-container">
+            <a href="home.html" class="logo">
+                <img src="src/assets/img-logo.png" alt="Brand Logo" />
+            </a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="product.html">Product</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button class="nav-link-button" onclick="navigateToAcsenda()"><span>Acsenda</span></button></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Main Product Display Section -->
+    <div class="product-container">
+        <h1 class="product-section-title">Featured Products</h1>
+        <div class="products-grid" id="productsGrid">
+            <!-- Products are dynamically inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Shopping Cart Counter -->
+    <div class="cart-count-container">
+        <button class="cart-count" id="cartCount" onclick="toggleCart()">Cart: 0</button>
+    </div>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2 class="cart-title">Shopping Cart</h2>
+            <button class="close-cart" onclick="toggleCart()"><i class="fa-solid fa-circle-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items are dynamically inserted here -->
+        </div>
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cartTotal">$0.00</span>
+        </div>
+        <button class="checkout-button" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+
+    <!-- Footer Section - Same as About page -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>At Pizza Planet, we are passionate about crafting the perfect pizzas with fresh ingredients and
+                    bold flavors.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>Email: info@example.com</li>
+                    <li>Phone: (123) 456-7890</li>
+                    <li>Address: 123 Street Name, City, Country</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-social-links">
+                <a href="https://www.facebook.com" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; 2024 Pizza Planet. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- External JavaScript file -->
+    <script src="main.js"></script>
+
+    <!-- Inline JavaScript for Shopping Cart Functionality -->
+    <script>
+        // Product Database
+        const products = [
+            // Array of product objects with details like id, name, price, description, and image
+            // Each product represents a different type of pizza
+            {
+                id: 1,
+                name: "Veggie Supreme",
+                price: 25.00,
+                description: "Perfect for vegetable lovers.",
+                image: "src/assets/p-1.jpg"
+            },
+            {
+                id: 2,
+                name: "Margherita",
+                price: 25.00,
+                description: "A classic choice, simple yet flavorful.",
+                image: "src/assets/p-2.jpg"
+            },
+            {
+                id: 3,
+                name: "Pepperoni",
+                price: 25.00,
+                description: "A universally loved, meat-forward option.",
+                image: "src/assets/p-3.jpg"
+            },
+            {
+                id: 4,
+                name: "Meat Lovers",
+                price: 25.00,
+                description: "Packed with hearty proteins.",
+                image: "src/assets/p-4.jpg"
+            },
+            {
+                id: 5,
+                name: "Hawaiian",
+                price: 25.00,
+                description: "A controversial but beloved sweet-and-savory combo.",
+                image: "src/assets/p-5.jpg"
+            },
+            {
+                id: 6,
+                name: "BBQ Chicken",
+                price: 25.00,
+                description: "Sweet, tangy, and smoky.",
+                image: "src/assets/p-6.jpg"
+            }
+        ];
+
+        // Shopping Cart Array
+        let cart = [];
+
+        // Updates all cart-related displays (count, items, total)
+        function updateCartDisplay() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+
+            // Update cart count in header
+            cartCount.textContent = `Cart: ${cart.length}`;
+
+            // Generate HTML for cart items or show empty cart message
+            cartItems.innerHTML = cart.length === 0
+                ? '<div class="empty-cart-message">Your cart is empty</div>'
+                : cart.map(item => `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                        <div class="cart-item-details">
+                            <div class="cart-item-title">${item.name}</div>
+                            <div class="cart-item-price">$${item.price}</div>
+                        </div>
+                        <button class="cart-item-remove" onclick="removeFromCart(${item.id})">Remove</button>
+                    </div>
+                `).join('');
+
+            // Calculate and display total price
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            cartTotal.textContent = `$${total.toFixed(2)}`;
+        }
+
+        // Toggles the cart sidebar visibility
+        function toggleCart() {
+            const cartSidebar = document.getElementById('cartSidebar');
+            cartSidebar.classList.toggle('open');
+        }
+
+        // Adds a product to the cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                cart.push(product);
+                updateCartDisplay();
+
+                // Visual feedback on add to cart button
+                const button = document.querySelector(`button[data-id="${productId}"]`);
+                const originalText = button.textContent;
+                button.textContent = "Added to Cart!";
+                button.style.backgroundColor = "#48bb78";
+
+                // Reset button after 1 second
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.backgroundColor = "#FF6F61";
+                }, 1000);
+            }
+        }
+
+        // Removes a product from the cart
+        function removeFromCart(productId) {
+            const index = cart.findIndex(item => item.id === productId);
+            if (index !== -1) {
+                cart.splice(index, 1);
+                updateCartDisplay();
+            }
+        }
+
+        // Handles the checkout process
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            alert('Thank you for your purchase!');
+            cart = [];
+            updateCartDisplay();
+            toggleCart();
+        }
+
+        // Creates HTML for a product card
+        function createProductCard(product) {
+            return `
+                <div class="product-card">
+                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                    <div class="product-info">
+                        <h2 class="product-title">${product.name}</h2>
+                        <p class="product-description">${product.description}</p>
+                        <div class="product-price">$${product.price}</div>
+                        <button class="cart-button" data-id="${product.id}" onclick="addToCart(${product.id})">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Initialize product display
+        const productsGrid = document.getElementById('productsGrid');
+        productsGrid.innerHTML = products.map(product => createProductCard(product)).join('');
+    </script>
+
+
+    <!--This section is for explanation------------------------------
+    -----------------------------------------------------------------
+    Page Organization:
+
+    The page consists of three main sections: navigation, product display, and shopping cart
+    Uses a responsive design with mobile considerations
+    Features a floating cart counter and slide-out cart sidebar
+
+
+    Shopping Cart Implementation:
+
+    Uses vanilla JavaScript for cart functionality
+    Maintains cart state in memory using an array
+    Provides visual feedback when items are added
+    Includes a running total and item management
+    Features a slide-out cart sidebar for easy access
+
+
+    Product Display:
+
+    Products are stored in a JavaScript array with detailed information
+    Each product has: ID, name, price, description, and image
+    Products are dynamically rendered into a grid layout
+    Each product card includes an "Add to Cart" button
+
+
+    Key Functions:
+
+    updateCartDisplay(): Updates all cart-related UI elements
+    toggleCart(): Controls cart sidebar visibility
+    addToCart(): Handles adding products with visual feedback
+    removeFromCart(): Manages product removal
+    checkout(): Processes the final order
+    createProductCard(): Generates product display HTML
+
+
+    User Interface Features:
+
+    Floating cart counter shows number of items
+    Slide-out cart sidebar for easy cart management
+    Visual feedback when adding items
+    Responsive design for different screen sizes
+    Clear product presentation with images and descriptions
+    ------------------------------------------------------------------
+    ----------------------------------------------------------------->
+</body>
+</html>

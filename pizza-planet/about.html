@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic meta tags for character encoding and responsive viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+
+    <!-- External CSS dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="src/assets/img-browser-logo.png" />
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Mobile-specific styles for navigation -->
+    <style>
+        @media (max-width: 768px) {
+            .nav-links {
+                top: 78px;
+                /* Adjust navigation position for mobile devices */
+            }
+        }
+    </style>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav style="top: 0;">
+        <div class="nav-container">
+            <!-- Logo with home link -->
+            <a href="home.html" class="logo">
+                <img src="src/assets/img-logo.png" alt="Brand Logo" />
+            </a>
+            <!-- Mobile hamburger menu -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- Navigation links -->
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="product.html">Product</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button class="nav-link-button" onclick="navigateToAcsenda()"><span>Acsenda</span></button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main About Section -->
+    <section class="about-section">
+        <div class="section-container">
+            <!-- Section Header with introduction -->
+            <div class="section-header">
+                <h2>About Us</h2>
+                <p>We are a passionate team of pizza enthusiasts, dedicated to crafting the perfect pies that bring
+                    people together. Our mission is to deliver delicious, unforgettable moments one slice at a time.</p>
+            </div>
+
+            <!-- Company Story Section -->
+            <div class="our-story">
+                <!-- Story image on the left -->
+                <div class="story-image">
+                    <img src="src/assets/about-us-img.jpg" alt="Our Story">
+                </div>
+                <!-- Story content on the right -->
+                <div class="story-content">
+                    <h3>Our Story</h3>
+                    <p>Founded in 2024, Pizza Planet began as a humble pizzeria with a simple goal: to serve the
+                        tastiest, freshest pizza in town. What started as a passion for authentic flavors has grown into
+                        a community of pizza lovers who share our dedication to quality and tradition.</p>
+                    <p>Our mission is to bring people together over irresistible slices crafted with love and the finest
+                        ingredients. From classic favorites to bold, creative flavors, we constantly innovate to satisfy
+                        every craving. At Pizza Paradise, every pizza tells a story—and we're thrilled to share ours
+                        with you.</p>
+                </div>
+            </div>
+
+            <!-- Team Members Section -->
+            <div class="section-header">
+                <h2>Our Team</h2>
+                <p>Meet our team</p>
+            </div>
+            <!-- Grid of team members -->
+            <div class="team-container">
+                <!-- Individual team member cards with social links -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="src/assets/team-1.jpg" alt="Team Member 1">
+                    </div>
+                    <div class="member-info">
+                        <h4>John Doe</h4>
+                        <p>CEO & Founder</p>
+                        <!-- Social media links with Font Awesome icons -->
+                        <div class="social-links-member">
+                            <a href="https://www.facebook.com" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.twitter.com" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="src/assets/team-2.jpg" alt="Team Member 1">
+                    </div>
+                    <div class="member-info">
+                        <h4>John Doe</h4>
+                        <p>CEO & Founder</p>
+                        <!-- Social media links with Font Awesome icons -->
+                        <div class="social-links-member">
+                            <a href="https://www.facebook.com" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.twitter.com" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="src/assets/team-3.jpg" alt="Team Member 1">
+                    </div>
+                    <div class="member-info">
+                        <h4>John Doe</h4>
+                        <p>CEO & Founder</p>
+                        <!-- Social media links with Font Awesome icons -->
+                        <div class="social-links-member">
+                            <a href="https://www.facebook.com" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.twitter.com" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="src/assets/team-3.jpg" alt="Team Member 1">
+                    </div>
+                    <div class="member-info">
+                        <h4>John Doe</h4>
+                        <p>CEO & Founder</p>
+                        <!-- Social media links with Font Awesome icons -->
+                        <div class="social-links-member">
+                            <a href="https://www.facebook.com" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.twitter.com" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Footer columns with different content sections -->
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>At Pizza Planet, we are passionate about crafting the perfect pizzas with fresh ingredients and
+                    bold flavors.</p>
+            </div>
+
+            <!-- Quick navigation links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact information -->
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>Email: info@example.com</li>
+                    <li>Phone: (123) 456-7890</li>
+                    <li>Address: 123 Street Name, City, Country</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer bottom with social links and copyright -->
+        <div class="footer-bottom">
+            <div class="footer-social-links">
+                <a href="https://www.facebook.com" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; 2024 Pizza Planet. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript file for interactive functionality -->
+    <script src="main.js"></script>
+
+
+    <!--This section is for explanation------------------------------
+    -----------------------------------------------------------------
+    Page Structure and Organization:
+    The HTML code is organized in a hierarchical manner with three main sections:
+
+    Navigation: Contains the logo, menu items, and a mobile-responsive hamburger menu
+    Main Content: Features the "About Us" section with company story and team member profiles
+    Footer: Includes contact information, quick links, and social media connections
+
+    The code uses semantic HTML5 elements like <nav>, <section>, and <footer> to clearly structure the content. It's also designed to be responsive, with special styling for mobile devices through media queries.
+    -------------------------------------------------------------------
+    -------------------------------------------------------------------
+    Code Analysis:
+    Looking at the implementation, there are a few technical details to note:
+
+    The head section includes viewport settings for responsive design
+    Font Awesome is integrated for social media icons
+    External CSS and JavaScript files are linked for better code organization
+    The team section uses a grid-based layout for member cards
+    Mike Johnson's profile appears to be duplicated in the team section
+    There's a reference to a navigateToAcsenda() function in the navigation
+
+
+    Features and Functionality:
+    The page includes several key features:
+
+    A responsive navigation menu with a hamburger button for mobile devices
+    An "About Us" section with company story and image
+    A team members showcase with social media links
+    A comprehensive footer with multiple sections for different types of information
+    Social media integration throughout the page
+    External resource integration (Font Awesome, custom CSS, and JavaScript)
+
+
+    Design Elements:
+    The page incorporates various design elements:
+
+    Brand imagery through the logo
+    Team member profile cards with images and social links
+    Story section with text and supporting image
+    Social media icons for connection points
+    Responsive design elements that adapt to different screen sizes
+    Organized footer with structured information sections
+    ------------------------------------------------------------------
+    ----------------------------------------------------------------->
+</body>
+
+</html>
